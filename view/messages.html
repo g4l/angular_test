@@ -1,0 +1,43 @@
+
+    <!-- message list-->
+<ul class="list-unstyled" >
+
+    <li class="email-email row unread"  ng-repeat="email in $ctrl.messagesLists" remove="$ctrl.removeEmail(email)">
+        <div class="people col-sm-3">
+            <ul class="mail-icons list-inline">
+                <li>
+                    <input type="checkbox" class="mail-select">
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-star-empty"></span>
+                </li>
+                <li>
+                    <span class="glyphicon glyphicon-cutlery"></span>
+                </li>
+            </ul>
+
+            <span class="people-names">
+                {{email.userName}}
+            </span>
+        </div><!-- people -->
+
+        <div class="message col-sm-7">
+            <div class="clipper">
+                <h3>{{email.title}}</h3>
+                -
+                <p>{{email.message}}</p>
+            </div>
+        </div><!-- message -->
+
+        <div class="date col-sm-2">
+            <date class="pull-right">{{email.time}}</date>
+        </div><!-- date -->
+        
+        <div class="view">
+          <button class="destroy" ng-click="$ctrl.removeEmail(email)">Delete</button>
+        </div>
+    </li>
+ 
+</ul>    
+
+
